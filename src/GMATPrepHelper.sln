@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9D168A
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "GMATPrepHelper.Database", "GMATPrepHelper.Database\GMATPrepHelper.Database.sqlproj", "{48F7BE38-AA2E-4133-9143-86EC3A3D05EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,12 @@ Global
 		{0E6B5CB2-6833-43E4-8446-5E355466C801}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E6B5CB2-6833-43E4-8446-5E355466C801}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E6B5CB2-6833-43E4-8446-5E355466C801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48F7BE38-AA2E-4133-9143-86EC3A3D05EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48F7BE38-AA2E-4133-9143-86EC3A3D05EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48F7BE38-AA2E-4133-9143-86EC3A3D05EC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{48F7BE38-AA2E-4133-9143-86EC3A3D05EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48F7BE38-AA2E-4133-9143-86EC3A3D05EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48F7BE38-AA2E-4133-9143-86EC3A3D05EC}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
