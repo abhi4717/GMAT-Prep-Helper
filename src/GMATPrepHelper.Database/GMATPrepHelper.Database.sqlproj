@@ -66,4 +66,7 @@
     <Build Include="DDL\QuestionType.sql" />
     <Build Include="DDL\QuestionAnswerSession.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="DML\GMATPrepHelper.PostDeployment.sql" />
+  </ItemGroup>
 </Project>
