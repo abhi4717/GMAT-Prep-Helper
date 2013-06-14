@@ -6,6 +6,6 @@
 	[Correct_Ans] INT NULL,
 	[Remarks] VARCHAR(500) NULL,
 	CONSTRAINT pk_QuestionAnswer PRIMARY KEY([Id]),
-	CONSTRAINT fk_Answers_SelectedAns FOREIGN KEY([Selected_Ans]) REFERENCES Answers,
-	CONSTRAINT fk_Answers_CorrectAns FOREIGN KEY([Correct_Ans]) REFERENCES Answers
+	CONSTRAINT fk_Answers_QuestionAnswer_SelectedAns FOREIGN KEY([Selected_Ans]) REFERENCES Answers,
+	CONSTRAINT fk_Answers_QuestionAnswer_CorrectAns FOREIGN KEY([Correct_Ans]) REFERENCES Answers
 )

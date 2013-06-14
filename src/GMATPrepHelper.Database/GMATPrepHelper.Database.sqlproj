@@ -62,5 +62,8 @@
     <Build Include="DDL\Section.sql" />
     <Build Include="DDL\Session.sql" />
     <Build Include="DDL\Type.sql" />
+    <Build Include="DDL\QuestionAnswers.sql" />
+    <Build Include="DDL\QuestionType.sql" />
+    <Build Include="DDL\QuestionAnswerSession.sql" />
   </ItemGroup>
 </Project>
