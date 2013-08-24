@@ -14,6 +14,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9D168A
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "GMATPrepHelper.Database", "GMATPrepHelper.Database\GMATPrepHelper.Database.sqlproj", "{48F7BE38-AA2E-4133-9143-86EC3A3D05EC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{A4C5EA02-E3E9-4804-81AF-F747C46C3B1D}"
+	ProjectSection(SolutionItems) = preProject
+		build\build.targets = build\build.targets
+		build\Test.targets = build\Test.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

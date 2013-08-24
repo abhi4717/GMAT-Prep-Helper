@@ -1,0 +1,15 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--<Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />-->
+  <PropertyGroup>
+    <PrebuildTargets>Clean;Build</PrebuildTargets>
+  </PropertyGroup>
+  <ItemGroup>
+    <TestProjects Include="Unit Tests">
+      <Path>..\GMATPrepHelper.Tests\GMATPrepHelper.Tests.csproj</Path>
+      <TargetName>Test</TargetName>
+    </TestProjects>
+  </ItemGroup>
+  <Target Name="RunTests" DependsOnTargets="$(PrebuildTargets)">
+    <MSBuild Projects="%(TestProjects.Path)" Targets="%(TestProjects.TargetName)" />
+  </Target>
+</Project>

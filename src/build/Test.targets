@@ -1,3 +1,11 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-
+  <PropertyGroup>
+    <PretestTargets>Clean;Build</PretestTargets>
+    <NunitConsolePath>C:\Program Files (x86)\NUnit 2.6.2\bin\nunit-console.exe</NunitConsolePath>
+    <NunitOutputLog>TestResult.xml</NunitOutputLog>
+  </PropertyGroup>
+  <Target Name="Test" DependsOnTargets="$(PretestTargets)">
+    <Message Text="Run test cases" />
+    <Exec Command="&quot;$(NunitConsolePath)&quot; &quot;$(MSBuildProjectDirectory)\$(OutputPath)\$(AssemblyName).dll&quot; /xml:&quot;$(NunitOutputLog)&quot;"  />
+  </Target>
 </Project>

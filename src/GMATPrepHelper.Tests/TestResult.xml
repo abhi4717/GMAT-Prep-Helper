@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\Abhishek Gopalan\Documents\Visual Studio 2012\Projects\GMAT-Prep-Helper\src\GMATPrepHelper.Tests\bin\Debug\GMATPrepHelper.Tests.dll" total="1" errors="0" failures="0" not-run="1" inconclusive="0" ignored="1" skipped="0" invalid="0" date="2013-08-15" time="17:16:48">
+  <environment nunit-version="2.6.2.12296" clr-version="2.0.50727.5420" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Users\Abhishek Gopalan\Documents\Visual Studio 2012\Projects\GMAT-Prep-Helper\src\GMATPrepHelper.Tests" machine-name="WIN-E827T81OTTB" user="Abhishek Gopalan" user-domain="WIN-E827T81OTTB" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\Users\Abhishek Gopalan\Documents\Visual Studio 2012\Projects\GMAT-Prep-Helper\src\GMATPrepHelper.Tests\bin\Debug\GMATPrepHelper.Tests.dll" executed="True" result="Success" success="True" time="0.100" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="GMATPrepHelper" executed="True" result="Success" success="True" time="0.077" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Tests" executed="True" result="Success" success="True" time="0.077" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="Unit_Test" executed="True" result="Success" success="True" time="0.076" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="TestSampleClass" executed="True" result="Success" success="True" time="0.073" asserts="0">
+                    <results>
+                      <test-suite type="ParameterizedTest" name="sample_fail_test_case" executed="False" result="Ignored">
+                        <reason>
+                          <message><![CDATA[]]></message>
+                        </reason>
+                        <results>
+                          <test-case name="GMATPrepHelper.Tests.Unit_Test.TestSampleClass.sample_fail_test_case()" executed="False" result="Ignored">
+                            <reason>
+                              <message><![CDATA[]]></message>
+                            </reason>
+                          </test-case>
+                        </results>
+                      </test-suite>
+                      <test-suite type="ParameterizedTest" name="sample_test_case" executed="True" result="Success" success="True" time="0.039" asserts="0">
+                        <results>
+                          <test-case name="GMATPrepHelper.Tests.Unit_Test.TestSampleClass.sample_test_case()" executed="True" result="Success" success="True" time="0.033" asserts="1" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
