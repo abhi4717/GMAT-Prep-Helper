@@ -3,4 +3,11 @@
     padding: 0px;
 }
 
+body div {
+    padding: 20px;
+}
+
+div[data-role="content"] {
+    width: 70%;
+}
 
