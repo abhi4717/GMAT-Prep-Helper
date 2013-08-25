@@ -16,8 +16,8 @@
 <body>
     <div data-role="page" data-theme="b">
         <div data-role="header" data-fullscreen="true" class="ui-header ui-bar-c" role="banner">
-            <h1 class="ui-title" role="heading" aria-level="1">Test</h1>
-            <div>@ViewBag.PageHeader</div>
+            <a href="@Url.Action("Index","Home")" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1 class="ui-title" role="heading" aria-level="1">@ViewBag.PageHeader</h1>
         </div>
         <div data-role="content">
             <form>

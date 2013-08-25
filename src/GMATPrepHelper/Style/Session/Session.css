@@ -1,0 +1,4 @@
+﻿div[data-role="fieldcontain"] label{
+    text-align: right;
+    vertical-align: middle !important;
+}

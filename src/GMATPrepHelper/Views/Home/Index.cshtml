@@ -1,10 +1,11 @@
 ﻿@{
     ViewBag.Title = "GMATPrep Helper";
     Layout = "~/Views/Layout/_Layout.cshtml";
+    ViewBag.PageHeader = "Test";
 }
 
 <div>
-    <a id="btnBeginSession" href="@Url.Action("","")" data-role="button"> Begin Session</a>
+    <a id="btnBeginSession" href="@Url.Action("Index","Session")" data-role="button" data-transition="slide"> Begin Session</a>
     <a id="bntEvaluate" href="@Url.Action("","")" data-role="button">Evaluate</a>
 </div>
 <script src="@Url.Content("~/Scripts/Home/Home.js")"></script> 

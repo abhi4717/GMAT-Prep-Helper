@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Session Start";
+    ViewBag.PageHeader = "Session";
+    Layout = "~/Views/Layout/_Layout.cshtml";
+}
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Style/Session/Session.css")"/>
+<div data-role="fieldcontain">
+    <label for="srt-number">Start from</label>
+    <input type="number" name="srt-number" pattern="[0-9]*" id="srt-number" value="" />
+</div>
+<div data-role="fieldcontain">
+    <label for="section">Section</label>
+
+    <select name="section" id="section" data-native-menu="false" data-theme="c">
+        <option value="0">Problem Solving</option>
+        <option value="1">Problem Solving</option>
+        <option value="2">Problem Solving</option>
+        <option value="3">Problem Solving</option>
+        <option value="4">Problem Solving</option>
+    </select>
+
+</div>
+<div data-role="fieldcontain">
+    <label for="book">Book</label>
+    <select name="book" id="book" data-native-menu="false" data-theme="c">
+        <option value="0">Problem Solving</option>
+        <option value="1">Problem Solving</option>
+        <option value="2">Problem Solving</option>
+        <option value="3">Problem Solving</option>
+        <option value="4">Problem Solving</option>
+    </select>
+    <button data-icon="add" name="book"data-iconpos="notext" data-theme="c"></button>
+</div>
+<div>
+    <button data-theme="c">Start</button>
+</div>

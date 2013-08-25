@@ -130,6 +130,7 @@
   <ItemGroup>
     <Compile Include="App_Start\StructuremapMvc.cs" />
     <Compile Include="Controllers\Home\HomeController.cs" />
+    <Compile Include="Controllers\Session\SessionController.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyResolver.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyScope.cs" />
@@ -144,6 +145,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
     <None Include="Scripts\lib\jquery-2.0.0.intellisense.js" />
+    <Content Include="Scripts\Home\Home.js" />
     <Content Include="Scripts\lib\jquery-1.9.1.min.js" />
     <Content Include="Scripts\lib\jquery-2.0.0.js" />
     <Content Include="Scripts\lib\jquery-2.0.0.min.js" />
@@ -159,9 +161,11 @@
     <Content Include="Style\jQueryMobile\jquery.mobile.structure-1.3.2.min.css" />
     <Content Include="Style\jQueryMobile\jquery.mobile.theme-1.3.2.min.css" />
     <Content Include="Style\Layout\layout.css" />
+    <Content Include="Style\Session\Session.css" />
     <Content Include="Web.config" />
     <Content Include="Views\Layout\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Session\Index.cshtml" />
     <None Include="Web.All.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.All.config</DependentUpon>
