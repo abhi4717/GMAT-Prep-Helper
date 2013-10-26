@@ -1,12 +1,187 @@
 <html>
 <head>
     <title>GMAT prep helper</title>
-    <link rel="stylesheet" href="lib/TwitterBootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="lib/TwitterBootstrap/css/bootstrap-responsive.min.css"/>
+    <link rel="stylesheet" href="lib/TwitterBootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="lib/TwitterBootstrap/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="css/default.css" />
 </head>
 <body>
+    <div id="content">
+        <ul id="tab-header" class="nav nav-tabs">
+            <li class="active"><a href="#session" data-toggle="tab">Session</a></li>
+            <li><a href="#answer" data-toggle="tab">Answer</a></li>
+            <li><a href="#evaluate" data-toggle="tab">Evaluate</a></li>
+            <li><a href="#export" data-toggle="tab">Export</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane" id="session">
+                <div class="row">
+                    <div class="span2 text-right">
+                        <span>Book</span>
+                    </div>
+                    <div class="span2">
+                        <input id="txtBook" type="text" placeholder="Enter book name" class="span3" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span2 text-right">
+                        <span>Section</span>
+                    </div>
+                    <div class="span2">
+                        <select id="ddSection" class="span3">
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span2 text-right">
+                        <span>Date</span>
+                    </div>
+                    <div class="span2">
+                        <input type="text" class="input-xlarge span3" id="txtDateTime" disabled="disabled" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span2 text-right">
+                        <span>Start question no</span>
+                    </div>
+                    <div class="span2">
+                        <input type="text" id="startQuestion" placeholder="Enter question number" class="span3" />
+                    </div>
+                </div>
+                <div>
+                    <button class="btn offset6 span1" id="btnStart">Start</button>
+                </div>
+            </div>
+            <div class="tab-pane" id="answer">
+                <div class="row">
+                    <div class="span2 text-right">
+                        <span>Question No</span>
+                    </div>
+                    <div class="span2">
+                        <input id="txtQuestionNo" type="text" class="span1" disabled="disabled" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span2 text-right">
+                        <span>Response</span>
+                    </div>
+                    <div class="span2">
+                        <select id="ddResponse" class="span1"></select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span2 text-right">
+                        <span>Comments</span>
+                    </div>
+                    <div class="span2">
+                        <textarea id="txtResponseComments" class="span7" rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <button id="btnEndSession" class="btn span2">End Session</button>
+                    <button id="btnPrevious" class="btn offset5 span2">Previous</button>
+                    <button id="btnNext" class="btn span2">Next</button>
+                </div>
+            </div>
+            <div class="tab-pane" id="evaluate">
+                <div class="row">
+                    <div class="span1 text-right">
+                        <span>Book</span>
+                    </div>
+                    <div class="span2">
+                        <label id="lblBook"></label>
+                    </div>
+                    <div class="span1 text-right">
+                        <span>Section</span>
+                    </div>
+                    <div class="span2">
+                        <label id="lblSection"></label>
+                    </div>
+                    <div class="span1 text-right">
+                        <span>Date</span>
+                    </div>
+                    <div class="span2">
+                        <label id="lblDate"></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span1 text-right">
+                        <span>Q. No</span>
+                    </div>
+                    <div class="span2">
+                        <label id="lblQuestionNo"></label>
+                    </div>
+                    <div class="span1 text-right">
+                        <span>Response</span>
+                    </div>
+                    <div class="span2">
+                        <label id="lblResponse"></label>
+                    </div>
+                    <div class="span1 text-right">
+                        <span>Time taken</span>
+                    </div>
+                    <div class="span2">
+                        <label id="lblTimeTaken"></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span1 text-right">
+                        Result
+                    </div>
+                    <div class="span3">
+                        <label class="radio inline">
+                            <input type="radio" name="rdbResult" value="1" />Correct
+                        </label>
+                        <label class="radio inline">
+                            <input type="radio" name="rdbResult" value="0" />Incorrect
+                        </label>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="span1 text-right">
+                        <span>Correct Response</span>
+                    </div>
+                    <div class="span1">
+                        <select id="ddCorrectResponse" class="span1"></select>
+                    </div>
+                    <div class="span2 text-right">
+                        <span>Mistake Type</span>
+                    </div>
+                    <div class="span2">
+                        <select id="ddMistake" class="span2"></select>
+                    </div>
+                    <div class="span1 text-right">
+                        <span>Please specify</span>
+                    </div>
+                    <div class="span2">
+                        <input type="text" id="txtOtherMistake" />
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <button id="btnEvalExport" class="btn span2">Export</button>
+                    <button id="btnEvalPrev" class="btn offset5 span2">Previous</button>
+                    <button id="btnEvalNext" class="btn span2">Next</button>
+                </div>
+            </div>
+            <div class="tab-pane active" id="export">
+                <div class="row">
+                    <div class="span8">
+                        <textarea id="txtExport" class="span9" rows="20"></textarea>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <button id="btnExpEvaluate" class="btn span2">Evaluate</button>
+                        <button id="btnExpGenerate" class="btn offset8 span2">Generate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-    <script type="text/javascript" src="lib/Jquery/jquery-2.0.3.min.js"></script>
-    <script type="text/javascript" src="lib/TwitterBootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="lib/Jquery/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="lib/TwitterBootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </html>

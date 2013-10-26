@@ -12,8 +12,28 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -------------------------------------------------*/
-a {
-    font-family: Arial, Verdana, sans-serif;
-    line-height: 1.4em;
-    color: #ee2211;
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    padding: 5%;
+}
+
+input[type="text"] {
+    padding: 15px;
+}
+
+label {
+    padding: 15px;
+}
+
+#content {
+    height: auto;
+    width: 75%;
+    margin: auto;
+    padding: 5%;
+    border: cadetblue dotted thin;
+    border-radius: 10px;
 }
