@@ -1,5 +1,17 @@
 ﻿var app = {
-    models: {}
-    , controler: {}
-    , view: {}
+    models: {
+        
+    }
+    , controller: {
+        init: function () {
+            
+        }
+    }
+    , view: {
+        
+    }
 };
+
+$.ready(function() {
+    app.controller.init();
+});
