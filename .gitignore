@@ -3,3 +3,4 @@ src/_ReSharper*/
 bin/
 obj/
 Web.config
+.Rproj.user
