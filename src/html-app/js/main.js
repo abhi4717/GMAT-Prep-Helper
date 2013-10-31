@@ -1,13 +1,23 @@
-﻿var app = {
+﻿$(function () {
+    // Binding initial values to drop down
+    app.view.bindSectionDropdown();
+    //app.view.bindSessionDate();
+
+    // Event binding
+	app.models.ele.btnSectionNext.on('click', app.controller.eventNext);
+});
+var app = {
     models: {
         ele: {
             ddSection: $('#ddSection')
 
-            , btnSectionNext: $('#btnNext')
+            , btnSectionNext: $('#btnStart')
 
             , dtSectionDate: $('#txtDateTime')
             , txtBook: $('#txtBook')
             , txtQuesNo: $('#startQuestion')
+			
+			, lblDateTime: $('#lblDateTime')
 
         }
         , session: {
@@ -35,23 +45,16 @@
             });
             app.models.ele.ddSection.html(strDropdown);
         }
-        , bindSessionDate: function () {
-            app.view.dateTimeInterval = setInterval(app.view.showDateTime(), 1000);
-        }
-        , dateTimeInterval: ''
+		
+        //, bindSessionDate:  setInterval(app.view.showDateTime(), 1000)
+        
         , showDateTime: function () {
             var temp = new Date();
             var strDate = temp.getDate() + '/' + temp.getMonth() + '/' + temp.getFullYear() + ' ' + temp.getHours() + ':' + temp.getMinutes() + ':' + temp.getSeconds();
-            app.models.ele.dtSectionDate.val(strDate);
+            //app.models.ele.dtSectionDate.val(strDate);
+			app.models.ele.lblDateTime.html(strDate);
         }
 
     }
 };
-$.ready(function () {
-    // Binding initial values to drop down
-    app.view.bindSectionDropdown();
-    app.view.bindSessionDate();
-
-    // Event binding
-    app.models.ele.btnSectionNext.on('click', app.controller.eventNext);
-})
+var bindSessionDate = setInterval(app.view.showDateTime(), 1000);
