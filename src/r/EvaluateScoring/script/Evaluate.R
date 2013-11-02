@@ -2,6 +2,12 @@
 input <- read.csv('C:\\Users\\abgopalan\\Documents\\GitHub\\GMAT-Prep-Helper\\src\\r\\EvaluateScoring\\resources\\Evaluate.csv',header=TRUE,sep=",",strip.white=TRUE);
 output.sessionAccuracy <- getSessionAccFrame('Critical Reasoning');
 output.typeDateAccuracy <- getTypeDateAccuracyFrame('Critical Reasoning');
+output.overallTypeAccuracy <- getTypeAccuracyFrame();
+
+
+
+
+
 getSessionAccFrame <- function(section){
   data <- getSectionData(section);
   dateList <- getDateList(data);
@@ -30,10 +36,10 @@ getTypeDateAccuracyFrame <- function(section){
   typeList <- getTypeList(data);
   dateList <- getDateList(data);
   type <- data.frame(Type=character(0),Date=character(0),Correct = numeric(0), Incorrect = numeric(0), Total = numeric(0), Percent = numeric(0));
-  for(dateCount in 1:length(dateList)){
-    for(typeCount in 1:length(typeList)){
+  for(typeCount in 1:length(typeList)){
+    for(dateCount in 1:length(dateList)){
        filterData <- data[data$Type==typeList[typeCount] & data$Date==dateList[dateCount],];
-       rbind(type,getTypeDateAccuracy(typeList[typeCount], dateList[dateCount], filterData));
+       type <- rbind(type,getTypeDateAccuracy(typeList[typeCount], dateList[dateCount], filterData));
     }
   }
   colnames(type) <- c("Type","Date","Correct","Incorrect","Total","Percent");
@@ -51,6 +57,32 @@ getTypeDateAccuracy <- function(type, date, data){
   type <- cbind(type,correctCount+incorrectCount);
   type <- cbind(type,correctCount/(correctCount+incorrectCount)*100);
   type;
+}
+
+getTypeAccuracyFrame <- function(){
+  data <- output.typeDateAccuracy;
+  typeList <- getTypeList(data);
+  typeAccuracy <- data.frame(Type = character(0), Correct = numeric(0), Incorrect = numeric(0), Total = numeric(0), Percent = numeric(0));
+  for(typeCount in 1:length(typeList)){
+    typeAccuracy <- rbind(typeAccuracy, getTypeAccuracy(typeList[typeCount], data[data$Type == typeList[typeCount],]));
+  }
+  
+  colnames(typeAccuracy) <- c('Type','Correct','Incorrect','Total','Percent');
+  typeAccuracy;
+}
+
+getTypeAccuracy <- function(type, data){
+  correctCount <- sum(data$Correct);
+  incorrectCount <- sum(data$Incorrect);
+  total <- sum(data$Total);
+  percent <- correctCount/total*100;
+  
+  typeAcc <-  as.data.frame(type);
+  typeAcc <- cbind(typeAcc, correctCount);
+  typeAcc <- cbind(typeAcc, incorrectCount);
+  typeAcc <- cbind(typeAcc, total);
+  typeAcc <- cbind(typeAcc, percent);
+  typeAcc;
 }
 
 getSectionData<-function(section){
