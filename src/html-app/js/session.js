@@ -1,11 +1,11 @@
 ﻿$(function () {
     // Binding initial values to drop down
-    app.view.bindSectionDropdown();
+    session.view.bindSectionDropdown();
 
     // Event binding
-	app.models.ele.btnSectionNext.on('click', app.controller.eventNext);
+	session.models.ele.btnSectionNext.on('click', session.controller.eventNext);
 });
-var app = {
+var session = {
     models: {
         ele: {
             ddSection: $('#ddSection')
@@ -16,18 +16,13 @@ var app = {
             , txtQuesNo: $('#startQuestion')
 
         }
-        , session: {
-            book: ''
-            , section: ''
-            , date: ''
-            , startQNo: ''
-        }
+        
     }
     , controller: {
 
         eventNext: function () {
-            app.controllers.bindSessionObject();
-			app.controllers.disableSessionControls();
+            session.controller.bindSessionObject();
+			session.controller.disableSessionControls();
         }
 		
 		, validateSessionControls : function(){
@@ -35,16 +30,16 @@ var app = {
 		}
 		
 		, bindSessionObject: function(){
-			app.models.session.book = app.models.ele.txtBook.val();
-            app.models.session.section = app.models.ele.ddSection.val();
-            app.models.session.date = new Date();
-            app.models.session.startQNo = app.models.ele.txtQuesNo.val();
+			app.session.book = session.models.ele.txtBook.val();
+            app.session.section = session.models.ele.ddSection.val();
+            app.session.date = new Date();
+            app.session.startQNo = session.models.ele.txtQuesNo.val();
 		}
 		
 		, disableSessionControls: function(){
-			app.models.ele.ddSection.attr('disabled','disabled');
-			app.models.ele.txtBook.attr('disabled','disabled');
-			app.models.ele.txtQuesNo.attr('disabled','disabled');
+			session.models.ele.ddSection.attr('disabled','disabled');
+			session.models.ele.txtBook.attr('disabled','disabled');
+			session.models.ele.txtQuesNo.attr('disabled','disabled');
 		}
 		
 		, moveAnswerSection: function(){
@@ -58,7 +53,7 @@ var app = {
             $.each(constant.section, function (index, obj) {
                 strDropdown += '<option value=' + index + '> ' + obj + '</option>';
             });
-            app.models.ele.ddSection.html(strDropdown);
+            session.models.ele.ddSection.html(strDropdown);
         }
     }
 };
