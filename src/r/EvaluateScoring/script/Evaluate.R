@@ -8,6 +8,7 @@ output.overallTypeAccuracy <- getTypeAccuracyFrame();
 
 
 
+
 getSessionAccFrame <- function(section){
   data <- getSectionData(section);
   dateList <- getDateList(data);
