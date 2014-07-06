@@ -4,6 +4,9 @@
 
     // Event binding
 	session.models.ele.btnSectionNext.on('click', session.controller.eventNext);
+	
+	// Initialize Controls
+	session.view.initControls();
 });
 var session = {
     models: {
@@ -14,7 +17,7 @@ var session = {
 
             , txtBook: $('#txtBook')
             , txtQuesNo: $('#startQuestion')
-
+			, divErrorMessage: $('#errorMsgDiv div.span9')
         }
         
     }
@@ -22,11 +25,21 @@ var session = {
 
         eventNext: function () {
             session.controller.bindSessionObject();
-			session.controller.disableSessionControls();
+			if(session.controller.validateSessionControls()){
+				session.controller.disableSessionControls();
+			}
         }
 		
 		, validateSessionControls : function(){
-			// to do: incorporate a jquery validator for the controls
+			var isValid = true;
+			if(session.models.ele.txtBook.val() == '' || session.models.ele.txtQuesNo.val() == '' || session.models.ele.txtQuesNo.val().search(/^\d+$/) == -1)
+				isValid = false;
+			
+			if(!isValid)
+				session.models.ele.divErrorMessage.show('slow');
+			else
+				session.models.ele.divErrorMessage.hide('slow');
+			return isValid;
 		}
 		
 		, bindSessionObject: function(){
@@ -55,5 +68,8 @@ var session = {
             });
             session.models.ele.ddSection.html(strDropdown);
         }
+		, initControls: function(){
+			// session.models.ele.alertMessage.alert('close');
+		}
     }
 };

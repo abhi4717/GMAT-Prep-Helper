@@ -37,3 +37,11 @@ label {
     border: cadetblue dotted thin;
     border-radius: 10px;
 }
+
+.missing-info{
+	display: none;
+}
+
+.error-msg{
+	height: 50px;
+}
